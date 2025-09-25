@@ -1,0 +1,112 @@
+.heroo {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #004d40, #00796b);
+}
+.hero-logo {
+  width: 100px;
+}
+.services .card {
+  transition: transform 0.3s;
+}
+.services .card:hover {
+  transform: translateY(-5px);
+}
+/* Homee.css إضافات جديدة */
+.service-card {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.service-icon {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2);
+}
+
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+/* تحسينات عامة */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('path/to/your/background/image.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+}
+
+.hero-logo {
+  max-width: 150px;
+}
+
+.footer {
+  background-color: #1a1a1a !important;
+}
+body {
+  background: #f8f9fa;
+}
+
+.about-section h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.about-img img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Feature Cards */
+.feature-card {
+  border: 0;
+  border-radius: 14px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+}
+
+.icon-red {
+  background: #e94b5a;
+}
+
+.icon-blue {
+  background: #1f6feb;
+}
+
+.icon-pink {
+  background: #ff4d6d;
+}
+.hove:hover{
+color:#000000;
+}

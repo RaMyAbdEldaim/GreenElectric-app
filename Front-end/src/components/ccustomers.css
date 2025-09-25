@@ -1,0 +1,30 @@
+.customers-bar {
+  background: #f8f9fa;
+  padding: 15px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.v img {
+  height: 40px;
+  margin: 0 45px;
+  transition: transform 0.1s;
+}
+
+.customers-bar img:hover {
+  transform: scale(1.1);
+}
+
+.scrolling {
+  display: inline-block;
+  animation: scroll 25s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
