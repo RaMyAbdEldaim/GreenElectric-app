@@ -1,7 +1,15 @@
 import { useState } from "react";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import countries from "../data/countries"; // استيراد البلاد
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    country: "",
+    message: "",
+  });
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
@@ -19,7 +27,7 @@ export default function ContactUs() {
       const result = await response.json();
       if (result.success) {
         setStatus("✅ Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", country: "", message: "" });
       } else {
         setStatus("❌ Error while sending message");
       }
@@ -29,77 +37,87 @@ export default function ContactUs() {
   };
 
   return (
-    <section className="py-5 bg-light" id="contact">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="card shadow-lg border-0 rounded-4">
-              <div className="card-body p-5">
-                <h2 className="text-center text-success mb-4">
-                  🌱 CONTACT REQUEST
-                </h2>
-                <p className="text-center text-muted mb-5">
-                  Have a question or need support? Fill out the form below and our team will get back to you.
-                </p>
+    <>
+      <NavBar />
+      <section className="py-5 bg-light" id="contact">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <div className="card shadow-lg border-0 rounded-4">
+                <div className="card-body p-5">
+                  <h2 className="text-center text-success mb-4">🌱 CONTACT REQUEST</h2>
+                  <form onSubmit={handleSubmit}>
+                    {/* الاسم */}
+                    <div className="mb-3">
+                      <label className="form-label fw-semibold">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="form-control form-control-lg"
+                        required
+                      />
+                    </div>
 
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label className="form-label fw-semibold">Full Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="form-control form-control-lg"
-                      placeholder="Enter your name"
-                      required
-                    />
-                  </div>
+                    {/* الإيميل */}
+                    <div className="mb-3">
+                      <label className="form-label fw-semibold">Email Address</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="form-control form-control-lg"
+                        required
+                      />
+                    </div>
 
-                  <div className="mb-3">
-                    <label className="form-label fw-semibold">Email Address</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="form-control form-control-lg"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
+                    {/* البلاد */}
+                    <div className="mb-3">
+                      <label className="form-label fw-semibold">Country</label>
+                      <select
+                        name="country"
+                        value={formData.country}
+                        onChange={handleChange}
+                        className="form-select form-select-lg"
+                        required
+                      >
+                        <option value="">Select your country</option>
+                        {countries.map((c, index) => (
+                          <option key={index} value={c}>{c}</option>
+                        ))}
+                      </select>
+                    </div>
 
-                  <div className="mb-3">
-                    <label className="form-label fw-semibold">Message</label>
-                    <textarea
-                      name="message"
-                      rows="5"
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="form-control form-control-lg"
-                      placeholder="Write your message here..."
-                      required
-                    ></textarea>
-                  </div>
+                    {/* الرسالة */}
+                    <div className="mb-3">
+                      <label className="form-label fw-semibold">Message</label>
+                      <textarea
+                        name="message"
+                        rows="5"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="form-control form-control-lg"
+                        required
+                      ></textarea>
+                    </div>
 
-                  <div className="d-grid">
-                    <button
-                      type="submit"
-                      className="btn btn-success btn-lg rounded-3"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
+                    <div className="d-grid">
+                      <button type="submit" className="btn btn-success btn-lg rounded-3">
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
 
-                {status && (
-                  <p className="text-center mt-4 fw-semibold">{status}</p>
-                )}
+                  {status && <p className="text-center mt-4 fw-semibold">{status}</p>}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </>
   );
 }

@@ -56,12 +56,9 @@ export default function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3 gap-3">
-                <Nav.Link className="fw-bold text-success" href="#Home">
+                <Link className="fw-bold text-success text-decoration-none mt-2" to={'/'}>
                   Home
-                </Nav.Link>
-                <Nav.Link className="fw-bold text-success" href="#About">
-                  About
-                </Nav.Link>
+                </Link>
                 <Link
                   className="fw-bold text-success nav-link"
                   to={"/contactus"}

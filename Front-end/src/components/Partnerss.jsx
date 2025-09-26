@@ -22,6 +22,8 @@ import شركه19 from "../assets/pictures/شركه 19.jpeg";
 import شركه20 from "../assets/pictures/شركه20.jpeg";
 import شركه21 from "../assets/pictures/شركه21.jpeg";
 import شركه22 from "../assets/pictures/شركه22.jpeg";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 const Partners = [
   { name: "Riken Company", img: شركه1 },
   { name: "victron energy Company", img: شركه2 },
@@ -49,6 +51,8 @@ const Partners = [
 
 function Partnerss() {
   return (
+    <>
+    <NavBar/>
     <section className="py-5 bg-light" id="partners">
       <div className="container">
         <div className="d-flex align-items-center justify-content-center mb-5">
@@ -74,7 +78,8 @@ function Partnerss() {
         </div>
       </div>
     </section>
-  );
+    <Footer/>
+  </>);
 }
 
 export default Partnerss;

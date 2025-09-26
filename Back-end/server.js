@@ -1,4 +1,3 @@
-// server.js
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
@@ -12,7 +11,7 @@ app.use(cors());
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user:'infogekwt@gmail.com',
+    user: "infogekwt@gmail.com",
     pass: "vlnq qhcn ktlo rnwu", 
   },
 });
@@ -26,18 +25,19 @@ transporter.verify((error, success) => {
 });
 
 app.post("/send", async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, country, message } = req.body;
 
   try {
     await transporter.sendMail({
-      from: `"Green Electric" <${process.env.EMAIL_USER}>`,
-      to: 'infogekwt@gmail.com', 
+      from: `"Green Electric" <${process.env.EMAIL_USER || "infogekwt@gmail.com"}>`,
+      to: "infogekwt@gmail.com",
       subject: `New Message from ${name}`,
       text: `
         You have a new contact form submission:
 
         👤 Name: ${name}
         📧 Email: ${email}
+        🌍 Country: ${country}
         📝 Message: ${message}
       `,
     });
