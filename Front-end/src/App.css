@@ -47,3 +47,98 @@
 
   color: black;
 }
+/* Navbar Links Hover */
+.navbar .nav-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #00ff99 !important;
+  transform: translateY(-2px);
+}
+
+/* Offcanvas Animation */
+.offcanvas.show {
+  animation: slideIn 0.4s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* تحسين شكل زرار التوجّل */
+.navbar-toggler {
+  border-color: #00ff99 !important;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 5px #00ff99;
+}
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  color: #fff;
+
+  /* خلفية بصورة + تدرج ألوان */
+  background: 
+    linear-gradient(135deg, rgba(0, 128, 0, 0.75), rgba(0, 0, 50, 0.75)),
+    url("../assets/hero-bg.jpg") center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تأثير حركة خفيف للخلفية */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15), transparent 70%),
+              radial-gradient(circle at 70% 50%, rgba(255,255,255,0.1), transparent 70%);
+  animation: backgroundMove 12s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundMove {
+  0% { transform: translateX(-20px) translateY(-10px); }
+  100% { transform: translateX(20px) translateY(10px); }
+}
+
+.hero-logo {
+  max-width: 200px;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo:hover {
+  transform: scale(1.08);
+}
+
+.hero-section h3,
+.hero-section h4 {
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-custom {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}

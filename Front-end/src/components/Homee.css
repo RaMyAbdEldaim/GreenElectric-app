@@ -110,3 +110,53 @@ body {
 .hove:hover{
 color:#000000;
 }
+.about-section {
+  background: #fff;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #198754; /* أخضر بروفيشنال */
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-img {
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+.about-section {
+  background: #fff;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #198754; /* أخضر بروفيشنال */
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-img {
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}

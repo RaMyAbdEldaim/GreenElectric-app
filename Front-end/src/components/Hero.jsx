@@ -1,40 +1,48 @@
-import logoo from "../assets/logoo.png";
 import React, { useState } from "react";
-import {Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, Card, Modal } from "react-bootstrap";
-import "./Homee.css"; 
+import "./Homee.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ge from '../assets/ge.jpeg';
-import Customers from './Customers';
+import ge from "../assets/ge.jpeg";
+import Logo from "../assets/logoo.png"; // ✅ لازم يكون الامتداد مظبوط
 import Certificates from "./Certificates";
+import "../App.css";
+
 export default function Hero() {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
   const services = [
-    { 
-      title: "Electrical Solutions", 
+    {
+      title: "Electrical Solutions",
       icon: "⚡",
-      description: "We provide comprehensive electrical solutions for industrial and marine applications.",
-      details: "Our electrical services include power system design, installation, maintenance, and troubleshooting for a wide range of applications. We specialize in energy-efficient solutions and renewable energy integration."
+      description:
+        "We provide comprehensive electrical solutions for industrial and marine applications.",
+      details:
+        "Our electrical services include power system design, installation, maintenance, and troubleshooting for a wide range of applications. We specialize in energy-efficient solutions and renewable energy integration.",
     },
-    { 
-      title: "Marine Services", 
+    {
+      title: "Marine Services",
       icon: "⛴️",
-      description: "Professional marine electrical services for vessels and offshore installations.",
-      details: "Our marine services cover electrical systems for ships, ports, and offshore platforms. We offer 24/7 support, emergency repairs, and compliance with international marine regulations and safety standards."
+      description:
+        "Professional marine electrical services for vessels and offshore installations.",
+      details:
+        "Our marine services cover electrical systems for ships, ports, and offshore platforms. We offer 24/7 support, emergency repairs, and compliance with international marine regulations and safety standards.",
     },
-    { 
-      title: "Petroleum Operations", 
+    {
+      title: "Petroleum Operations",
       icon: "🛢️",
-      description: "Electrical solutions tailored for the petroleum and gas industry.",
-      details: "We provide specialized electrical services for petroleum operations including refineries, pipelines, and drilling operations. Our solutions prioritize safety, reliability, and compliance with explosive atmosphere regulations."
+      description:
+        "Electrical solutions tailored for the petroleum and gas industry.",
+      details:
+        "We provide specialized electrical services for petroleum operations including refineries, pipelines, and drilling operations. Our solutions prioritize safety, reliability, and compliance with explosive atmosphere regulations.",
     },
-    { 
-      title: "Sustainable Projects", 
+    {
+      title: "Sustainable Projects",
       icon: "🌱",
       description: "Green energy solutions and sustainable electrical projects.",
-      details: "Our sustainable projects division focuses on renewable energy integration, energy efficiency audits, and green technology implementation. We help clients reduce their carbon footprint and energy costs."
+      details:
+        "Our sustainable projects division focuses on renewable energy integration, energy efficiency audits, and green technology implementation. We help clients reduce their carbon footprint and energy costs.",
     },
   ];
 
@@ -50,68 +58,94 @@ export default function Hero() {
 
   return (
     <div className="home-page" id="Home">
-      <section className="heroo d-flex align-items-center text-center text-light">
+      {/* Hero Section */}
+      <section className="hero-section d-flex align-items-center text-center text-light">
         <Container>
+          {/* Logo */}
           <img
-            src={logoo} 
+            src={Logo}
             alt="Green Electric Logo"
-            className="mb-3 hero-logo"
+            className="mb-4 hero-logo img-fluid"
           />
-          <h4 className="fw-bold">Green Electric For Petroleum And Marine Services Co.W.L.L</h4>
-          <h4>شركة جرين اليكتريك للخدمات البتروليه والبحريه ذ.م.م</h4>
-          <div className="mt-4">
-            <Button variant="success" size="lg" className="me-3">
-              <a  href="#About" className="text-decoration-none text-light"> Learn More </a>
+
+          {/* English Title */}
+          <h3 className="fw-bold mb-2">
+            Green Electric For Petroleum And Marine Services Co. W.L.L
+          </h3>
+
+          {/* Arabic Title */}
+          <h4 className="fw-semibold mb-4">
+            شركة جرين إليكتريك للخدمات البترولية والبحرية ذ.م.م
+          </h4>
+
+          {/* Buttons */}
+          <div className="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+            <Button
+              variant="success"
+              size="lg"
+              className="px-4 shadow-sm btn-custom"
+              as={Link}
+              to="#About"
+            >
+              Learn More
             </Button>
-            <Button variant="outline-light" size="lg">
-              <Link className="text-decoration-none text-light " to={"/contactus"}><span className="hove">Contact Us</span></Link>  
+            <Button
+              variant="outline-light"
+              size="lg"
+              className="px-4 shadow-sm btn-custom"
+              as={Link}
+              to="/contactus"
+            >
+              Contact Us
             </Button>
           </div>
         </Container>
       </section>
 
-      <section className="about py-5" id="About">
-        
-      
-      <section className="about-section py-5">
+      {/* About Section */}
+      <section className="about-section py-5" id="About">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-7">
-              <h2>About Al Green Electric</h2>
-              <p>
+            {/* النص */}
+            <div className="col-lg-7 mb-4 mb-lg-0">
+              <h2 className="fw-bold mb-4 text-success">About Green Electric</h2>
+              <p className="text-muted mb-3">
                 At Green Electric, we aim to support your electrical, automation,
-                instrumentation, and Mechanical processes in any way possible. Our
-                experience in these core fields, processes, and retrofit/ repair work
-                is extensive. We stay up-to-date on the best practices in the
-                industries. Our efficient Setup makes us mobile, readily available,
+                instrumentation, and mechanical processes in any way possible.
+                Our experience in these core fields, processes, and retrofit/repair
+                work is extensive. We stay up-to-date on the best practices in the
+                industries. Our efficient setup makes us mobile, readily available,
                 and cost-effective.
               </p>
-              <p>
-                We always strive for excellence with a customer-focused approach. We
-                believe in adapting quickly to the changing environment and see every
-                change and challenge as an opportunity to set us apart and distinguish
-                ourselves.
+              <p className="text-muted mb-3">
+                We always strive for excellence with a customer-focused approach.
+                We believe in adapting quickly to the changing environment and see
+                every change and challenge as an opportunity to set us apart.
               </p>
-              <p>
-                We have a great aptitude for providing solutions for obsolete spares,
-                retrofits & upgrades. That is how Green Electric gained a competitive
-                edge over others. Main Sectors are Oil & Gas, Marine, Offshore, Power
-                plants, and Renewable Energy
+              <p className="text-muted">
+                We have a great aptitude for providing solutions for obsolete
+                spares, retrofits & upgrades. Main Sectors are Oil & Gas, Marine,
+                Offshore, Power plants, and Renewable Energy.
               </p>
             </div>
-           
-            <div className="col-lg-4 about-img text-center">
-              <img src={ge} alt="GE Company" className="img-fluid rounded" />
+
+            {/* الصورة */}
+            <div className="col-lg-5 text-center">
+              <img
+                src={ge}
+                alt="GE Company"
+                className="img-fluid rounded shadow-lg about-img"
+              />
             </div>
           </div>
         </div>
       </section>
-     
+
+      {/* Features Section */}
       <div className="container py-5">
         <div className="row g-4">
-         
           <div className="col-12 col-md-6 col-lg-4">
-            <div className="card feature-card shadow-sm bg-white">
+            <div className="card feature-card shadow-sm bg-white h-100">
               <div className="card-body">
                 <div className="feature-icon icon-red mb-3">
                   <i className="bi bi-gear-fill"></i>
@@ -123,8 +157,8 @@ export default function Hero() {
                     project completion.
                   </li>
                   <li>
-                    we provide high-performance trading by sourcing the best &
-                    economical
+                    We provide high-performance trading by sourcing the best &
+                    economical.
                   </li>
                 </ul>
               </div>
@@ -132,7 +166,7 @@ export default function Hero() {
           </div>
 
           <div className="col-12 col-md-6 col-lg-4">
-            <div className="card feature-card shadow-sm bg-white">
+            <div className="card feature-card shadow-sm bg-white h-100">
               <div className="card-body">
                 <div className="feature-icon icon-blue mb-3">
                   <i className="bi bi-building"></i>
@@ -140,8 +174,8 @@ export default function Hero() {
                 <h5 className="card-title mb-3">EPC Projects</h5>
                 <ul className="text-muted small">
                   <li>
-                    Through strategic alliances with leading vendors, engineering and
-                    construction companies,
+                    Through strategic alliances with leading vendors, engineering,
+                    and construction companies,
                   </li>
                   <li>
                     we undertake turnkey EPC projects. Depending on project size &
@@ -151,18 +185,21 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        
+
           <div className="col-12 col-md-6 col-lg-4">
-            <div className="card feature-card shadow-sm bg-white">
+            <div className="card feature-card shadow-sm bg-white h-100">
               <div className="card-body">
                 <div className="feature-icon icon-pink mb-3">
                   <i className="bi bi-tools"></i>
                 </div>
                 <h5 className="card-title mb-3">Maintenance & Training</h5>
                 <ul className="text-muted small">
-                  <li>We perform specialist maintenance services and customer training</li>
                   <li>
-                    understanding the importance of effective communication and
+                    We perform specialist maintenance services and customer
+                    training.
+                  </li>
+                  <li>
+                    Understanding the importance of effective communication and
                     collaboration.
                   </li>
                 </ul>
@@ -171,20 +208,18 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      </section>
-          
-              <Customers/>
-      
+
+      {/* Services Section */}
       <section className="services py-5 bg-light" id="Services">
         <Container>
           <h2 className="text-center mb-5">Our Services</h2>
           <Row>
             {services.map((service, idx) => (
-              <Col md={6} lg={3} key={idx} className="mb-4">
-                <Card 
+              <Col xs={12} sm={6} lg={3} key={idx} className="mb-4">
+                <Card
                   className="h-100 shadow-sm text-center p-3 service-card"
                   onClick={() => handleServiceClick(service)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 >
                   <Card.Body>
                     <div className="display-4 service-icon">{service.icon}</div>
@@ -214,7 +249,7 @@ export default function Hero() {
             <Col md={12}>
               <p className="lead">{selectedService?.description}</p>
               <p>{selectedService?.details}</p>
-              
+
               <div className="bg-light p-3 rounded mt-4">
                 <h6>Our offerings include:</h6>
                 <ul>
@@ -232,13 +267,14 @@ export default function Hero() {
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleCloseModal}>
-            <Link className="text-decoration-none text-light " to={"/contactus"}>Contact Us About This Service</Link>
+          <Button as={Link} to="/contactus" variant="primary">
+            Contact Us About This Service
           </Button>
         </Modal.Footer>
       </Modal>
-            <Certificates/>
 
+      {/* Certificates */}
+      <Certificates />
     </div>
   );
 }

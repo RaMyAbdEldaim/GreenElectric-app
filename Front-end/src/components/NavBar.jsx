@@ -1,12 +1,15 @@
-import {React} from 'react';
-import {Link } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Container, Form, Button, Offcanvas, InputGroup  } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Navbar,
+  Nav,
+  Container,
+  Offcanvas
+} from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import logoo from "../assets/logoo.png";
-import "../App.css"
-import Home from './Home';
-import ContactForm from './ContactForm'
-import Partnerss from './Partnerss';
+import "../App.css";
+
 export default function NavBar() {
   return (
     <>
@@ -15,42 +18,63 @@ export default function NavBar() {
         bg="dark"
         variant="dark"
         fixed="top"
-        className="shadow-sm"
+        className="shadow-sm py-2"
       >
         <Container>
-          <Navbar.Brand href="#home" className="fw-bold green ">
+          {/* Logo + Title */}
+          <Navbar.Brand
+            href="#home"
+            className="fw-bold text-success d-flex align-items-center"
+          >
             <img
-              src={logoo}  
+              src={logoo}
               alt="Logo"
-              width="35"
-              height="35"
-              className="d-inline-block align-top me-2 rounded-circle"
-            />    
+              width="42"
+              height="42"
+              className="d-inline-block align-top me-2 rounded-circle border border-2 border-success"
+            />
+            <span className="d-none d-sm-inline">Green Electric</span>
           </Navbar.Brand>
 
+          {/* Toggle Button */}
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
+
+          {/* Offcanvas Menu */}
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="end"
+            className="bg-dark text-white"
           >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">
-                Menu
+            <Offcanvas.Header closeButton closeVariant="white">
+              <Offcanvas.Title
+                id="offcanvasNavbarLabel"
+                className="fw-bold text-success"
+              >
+                Navigation
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end text-success flex-grow-1 pe-3">
-                <Nav.Link className='fw-bold green' href='#Home'>Home</Nav.Link>
-                <Nav.Link className='fw-bold green' href="#About">About</Nav.Link>
-                <Link className='text-decoration-none mt-2 fw-bold green' to={"/contactus"}>
-                Contact Us
+              <Nav className="justify-content-end flex-grow-1 pe-3 gap-3">
+                <Nav.Link className="fw-bold text-success" href="#Home">
+                  Home
+                </Nav.Link>
+                <Nav.Link className="fw-bold text-success" href="#About">
+                  About
+                </Nav.Link>
+                <Link
+                  className="fw-bold text-success nav-link"
+                  to={"/contactus"}
+                >
+                  Contact Us
                 </Link>
-                <Link className='text-decoration-none mt-2 fw-bold ps-2 green' to={"/Partners"}>
-                Industrial division
+                <Link
+                  className="fw-bold text-success nav-link"
+                  to={"/Partners"}
+                >
+                  Industrial Division
                 </Link>
               </Nav>
-
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
@@ -58,8 +82,3 @@ export default function NavBar() {
     </>
   );
 }
-
-
-
-
-

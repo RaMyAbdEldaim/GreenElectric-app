@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ge from '../assets/pictures/ge.jpeg'
+// import ge from '../assets/pictures/ge.jpeg'
 import شركه1  from "../assets/pictures/شركه 1.jpeg";
 import شركه2  from "../assets/pictures/شركه2.jpeg";
 import شركه3  from "../assets/pictures/شركه3.jpeg";
