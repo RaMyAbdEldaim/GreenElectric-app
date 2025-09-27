@@ -23,7 +23,6 @@ export default function NavBar() {
         <Container>
           {/* Logo + Title */}
           <Navbar.Brand
-            href="#home"
             className="fw-bold text-success d-flex align-items-center"
           >
             <img

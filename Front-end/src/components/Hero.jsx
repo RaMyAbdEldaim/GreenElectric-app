@@ -85,7 +85,7 @@ export default function Hero() {
               size="lg"
               className="px-4 shadow-sm btn-custom"
               as={Link}
-              to="#About"
+              to="/Partners"
             >
               Learn More
             </Button>
