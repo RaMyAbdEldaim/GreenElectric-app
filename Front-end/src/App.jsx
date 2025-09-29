@@ -9,6 +9,8 @@ import Home from './components/Home';
 import NotFound from './components/Notfound';
 import Partnerss from './components/Partnerss';
 import { FaWhatsapp, FaEnvelope, FaLinkedin, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import About from './components/About';
+import Certificatess from './components/Certificatess';
 
 
 
@@ -21,6 +23,8 @@ function App() {
           <Route path='*' element={<NotFound/>}/>
           <Route path='/contactus' element={<ContactForm/>}/>
           <Route path='/Partners' element={<Partnerss/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/certificates' element={<Certificatess/>}/>
         </Routes>
       </BrowserRouter>
     </div>

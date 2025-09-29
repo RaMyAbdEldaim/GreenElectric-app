@@ -7,7 +7,7 @@ import ge from "../assets/ge.jpeg";
 import Logo from "../assets/logoo.png"; // ✅ لازم يكون الامتداد مظبوط
 import Certificates from "./Certificates";
 import "../App.css";
-
+import Customers from "./Customers";
 export default function Hero() {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
@@ -208,7 +208,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
+        <Customers/>
       {/* Services Section */}
       <section className="services py-5 bg-light" id="Services">
         <Container>

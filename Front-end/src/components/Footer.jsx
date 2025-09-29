@@ -12,7 +12,6 @@ function Footer() {
         <Row>
           {/* Logo & Social Icons */}
           <Col md={3} className="mb-4">
-            <h4 className="fw-bold text-success"> GREEN ELECRTRIC</h4>
             <div className="d-flex gap-3 mt-3 ms-5">
               <a href="mailto:ceo@ge-kwt.com" className="text-light fs-5"><FaEnvelope /></a>
               <a href="https://wa.me/96595554616" className="text-light fs-5"><FaWhatsapp /></a>
@@ -57,7 +56,7 @@ function Footer() {
 
         <hr className="border-light" />
         <div className="text-center small">
-          © All rights reserved to GREEN ELECTRIC | Designed & Developed By Y&R Tech
+          © All rights reserved to GEPMS | Designed & Developed By Y&R Tech
         </div>
       </Container>
     </footer>
