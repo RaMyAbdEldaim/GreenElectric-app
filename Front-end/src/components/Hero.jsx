@@ -4,8 +4,7 @@ import { Container, Row, Col, Button, Card, Modal } from "react-bootstrap";
 import "./Homee.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ge from "../assets/ge.jpeg";
-import Logo from "../assets/logoo.png"; // ✅ لازم يكون الامتداد مظبوط
-import Certificates from "./Certificates";
+import Logo from "../assets/logoo.png"; 
 import "../App.css";
 import Customers from "./Customers";
 export default function Hero() {
@@ -273,8 +272,7 @@ export default function Hero() {
         </Modal.Footer>
       </Modal>
 
-      {/* Certificates */}
-      <Certificates />
+
     </div>
   );
 }
