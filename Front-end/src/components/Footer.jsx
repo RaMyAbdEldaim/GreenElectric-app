@@ -50,7 +50,7 @@ function Footer() {
             <h5 className="text-danger">Contact Us</h5>
             <p className="mt-3"><FaMapMarkerAlt />Space Tower floor 1, Abduaziz Hamad AlSaqer St., Mirqab, kuwait city</p>
             <p><FaPhone /> +965 95554616</p>
-            <p><FaEnvelope />ceo@ge-kwt.com</p>
+            <p><FaEnvelope />Info@ge-kwt.com</p>
           </Col>
         </Row>
 

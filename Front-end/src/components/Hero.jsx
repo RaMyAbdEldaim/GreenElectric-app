@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, Card, Modal } from "react-bootstrap";
 import "./Homee.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ge from "../assets/ge.jpeg";
 import Logo from "../assets/logoo.png"; 
 import "../App.css";
 import Customers from "./Customers";
@@ -100,47 +99,7 @@ export default function Hero() {
           </div>
         </Container>
       </section>
-
-      {/* About Section */}
-      <section className="about-section py-5" id="About">
-        <div className="container">
-          <div className="row align-items-center">
-            {/* النص */}
-            <div className="col-lg-7 mb-4 mb-lg-0">
-              <h2 className="fw-bold mb-4 text-success">About Green Electric</h2>
-              <p className="text-muted mb-3">
-                At Green Electric, we aim to support your electrical, automation,
-                instrumentation, and mechanical processes in any way possible.
-                Our experience in these core fields, processes, and retrofit/repair
-                work is extensive. We stay up-to-date on the best practices in the
-                industries. Our efficient setup makes us mobile, readily available,
-                and cost-effective.
-              </p>
-              <p className="text-muted mb-3">
-                We always strive for excellence with a customer-focused approach.
-                We believe in adapting quickly to the changing environment and see
-                every change and challenge as an opportunity to set us apart.
-              </p>
-              <p className="text-muted">
-                We have a great aptitude for providing solutions for obsolete
-                spares, retrofits & upgrades. Main Sectors are Oil & Gas, Marine,
-                Offshore, Power plants, and Renewable Energy.
-              </p>
-            </div>
-
-            {/* الصورة */}
-            <div className="col-lg-5 text-center">
-              <img
-                src={ge}
-                alt="GE Company"
-                className="img-fluid rounded shadow-lg about-img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
+ {/* Features Section */}
       <div className="container py-5">
         <div className="row g-4">
           <div className="col-12 col-md-6 col-lg-4">
