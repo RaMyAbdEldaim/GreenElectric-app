@@ -32,7 +32,7 @@ export default function NavBar() {
               height="42"
               className="d-inline-block align-top me-2 rounded-circle border border-2 border-success"
             />
-            <span className="d-none d-sm-inline">Green Electric</span>
+            <span className="d-none d-sm-inline"></span>
           </Navbar.Brand>
 
           {/* Toggle Button */}

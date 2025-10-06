@@ -108,8 +108,13 @@ export default function ContactUs() {
                         Send Message
                       </button>
                     </div>
-                    <h2 className="text-success mt-3">Location <i class="bi bi-geo-alt text-success"></i></h2>
-                    <p className="font-bold">Space Tower floor 1, Abduaziz Hamad AlSaqer St., Mirqab, kuwait city</p>
+
+                    <h2 className="text-success mt-3">
+                      Location <i className="bi bi-geo-alt text-success"></i>
+                    </h2>
+                    <p className="fw-bold">
+                      Space Tower floor 1, Abduaziz Hamad AlSaqer St., Mirqab, Kuwait City
+                    </p>
                   </form>
 
                   {status && <p className="text-center mt-4 fw-semibold">{status}</p>}
