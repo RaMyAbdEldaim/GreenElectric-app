@@ -20,6 +20,7 @@ import شركه19 from "../assets/pictures/شركه 19.jpeg";
 import شركه26 from "../assets/pictures/شركه26.jpeg";
 import شركه25 from "../assets/pictures/شركه25.jpeg";
 import شركه24 from "../assets/pictures/شركه24.jpeg";
+import شركه28 from "../assets/pictures/شركه28.jpeg";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 const Partners = [
@@ -43,6 +44,7 @@ const Partners = [
   // { name: "victron energy Company", img: شركه20 },
   // { name: "JIULI ROPE Company", img: شركه21 },
   { name: "", img: شركه24 },
+  { name: "", img: شركه28 },
 ];
 
 
