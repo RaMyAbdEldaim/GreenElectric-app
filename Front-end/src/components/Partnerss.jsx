@@ -35,7 +35,7 @@ const Partners = [
   // { name: "LAPP Company", img: شركه10 },
   { name: "", img: شركه11 },
   // { name: "ROVO Company", img: شركه12 },
-  { name: "impa Company", img: شركه25 },
+  { name: "", img: شركه25 },
   { name: "", img: شركه15 },
   { name: "", img: شركه17 },
   // { name: "blueye Company", img: شركه18 },
