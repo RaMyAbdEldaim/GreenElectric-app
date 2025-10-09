@@ -19,7 +19,7 @@ function About() {
                   <div className="col-lg-7 mb-4 mb-lg-0">
                     <h2 className="fw-bold mb-4 text-success">About Green Electric</h2>
                     <p className="text-muted mb-3">
-                      At Green Electric, we aim to support your electrical, automation,
+                      At GEPMS Co, we aim to support your electrical, automation,
                       instrumentation, and mechanical processes in any way possible.
                       Our experience in these core fields, processes, and retrofit/repair
                       work is extensive. We stay up-to-date on the best practices in the
