@@ -7,20 +7,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import شركه4  from "../assets/pictures/شركه4.jpeg";
 // import شركه5  from "../assets/pictures/شركه5.jpeg";
 // import شركه6  from "../assets/pictures/شركه6.jpeg";
-// import شركه7  from "../assets/pictures/شركه7.jpeg";
-// import شركه8 from "../assets/pictures/شركه8.jpeg";
+import شركه27 from "../assets/pictures/شركه27.jpeg";
 import شركه9  from "../assets/pictures/شركه9.jpeg";
 // import شركه10  from "../assets/pictures/شركه10.jpeg";
 import شركه11 from "../assets/pictures/شركه11.jpeg";
 // import شركه12 from "../assets/pictures/شركه12.jpeg";
 // import شركه14 from "../assets/pictures/شركه14.jpeg";
 import شركه15 from "../assets/pictures/شركه15.jpeg";
-import شركه16 from "../assets/pictures/شركه16.jpeg";
 import شركه17 from "../assets/pictures/شركه17.jpeg";
 // import شركه18 from "../assets/pictures/شركه 18.jpeg";
 import شركه19 from "../assets/pictures/شركه 19.jpeg";
-// import شركه20 from "../assets/pictures/شركه20.jpeg";
-// import شركه21 from "../assets/pictures/شركه21.jpeg";
+import شركه26 from "../assets/pictures/شركه26.jpeg";
+import شركه25 from "../assets/pictures/شركه25.jpeg";
 import شركه24 from "../assets/pictures/شركه24.jpeg";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
@@ -30,16 +28,15 @@ const Partners = [
   // { name: "Senko Company", img: شركه3 },
   // { name: "cotrem Company", img: شركه4 },
   // { name: "FCG Company", img: شركه5 },
-  // { name: "AEG Company", img: شركه6 },
-  // { name: "IMCA Company", img: شركه7 },
+  { name: "", img: شركه26 },
+  { name: "", img: شركه27},
   // { name: "SIEMENS Company", img: شركه8 },
   { name: "", img: شركه9 },
   // { name: "LAPP Company", img: شركه10 },
   { name: "", img: شركه11 },
   // { name: "ROVO Company", img: شركه12 },
-  // { name: "impa Company", img: شركه14 },
+  { name: "impa Company", img: شركه25 },
   { name: "", img: شركه15 },
-  { name: "", img: شركه16 },
   { name: "", img: شركه17 },
   // { name: "blueye Company", img: شركه18 },
  { name: "", img: شركه19 },

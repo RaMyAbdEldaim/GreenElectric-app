@@ -1,23 +1,30 @@
-// server.js
+// server.js - الكود النهائي المعدل لـ Bluehost
 require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"; // رابط الواجهة
 
 // ====== Middleware ======
 app.use(express.json());
 
-// CORS (مفتوح أثناء التطوير)
+// CORS للإنتاج على Bluehost
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: [
+    "https://gepms.com",          
+    "https://www.gepms.com",    
+    "http://localhost:5173"
+  ],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));
+
+// خدمة الـ Static files من الـ Front-end
+app.use(express.static(path.join(__dirname, "../Front-end/dist")));
 
 // ====== Rate Limiter ======
 const sendLimiter = rateLimit({
@@ -65,7 +72,7 @@ app.post("/send", async (req, res) => {
     // إرسال الرسالة
     const info = await transporter.sendMail({
       from: `"Green Electric" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO || "infogekwt@gmail.com",
+      to: process.env.RECEIVER_EMAIL || "infogekwt@gmail.com",
       subject: `New Message from ${name}`,
       text: `
 You have a new contact form submission:
@@ -77,7 +84,7 @@ Message: ${message}
       `,
     });
 
-    console.log("📩 Email sent:", info.response);
+    console.log("📩 Email sent:", info.messageId);
     res.json({ success: true, message: "Email sent successfully!" });
 
   } catch (err) {
@@ -86,5 +93,14 @@ Message: ${message}
   }
 });
 
+// ====== جميع الطلبات الأخرى تروح للـ Front-end ======
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../Front-end/dist/index.html"));
+});
+
 // ====== تشغيل السيرفر ======
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🌐 Frontend: https://ge-kwt.com`);
+  console.log(`🔧 Environment: ${process.env.NODE_ENV || 'development'}`);
+});
